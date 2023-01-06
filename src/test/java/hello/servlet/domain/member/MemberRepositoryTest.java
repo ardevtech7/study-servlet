@@ -8,7 +8,7 @@ import java.util.List;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 class MemberRepositoryTest {
-    // 테스트할 대상 가져오기. Singleton 으로 생성했기 때문에 new 불가
+    // 테스트할 대상 가져오기. Singleton 으로 생성했기 때문에 new 키워드 사용 불가
     MemberRepository memberRepository = MemberRepository.getInstance();
 
     // 테스트가 끝나면 초기화하기 위해 설정

@@ -15,7 +15,7 @@ import java.util.Map;
 
 @WebServlet(name = "FrontControllerServletV1", urlPatterns = "/front-controller/v1/*")
 public class FrontControllerServletV1 extends HttpServlet {
-    // mapping 정보: 어떤 url 이 호출되는 controllerV1을 꺼내서 호출하는 것
+    // key : 매핑 URL, value : 호출될 컨트롤러
     private Map<String, ControllerV1> controllerMap = new HashMap<>();
 
     // servlet 이 처음 생성될 때, mapping 정보를 담는다.
@@ -39,4 +39,5 @@ public class FrontControllerServletV1 extends HttpServlet {
         }
         controller.process(request, response);
     }
+
 }

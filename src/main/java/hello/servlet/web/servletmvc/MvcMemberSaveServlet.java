@@ -23,7 +23,11 @@ public class MvcMemberSaveServlet extends HttpServlet {
         Member member = new Member(username, age);
         memberRepository.save(member);
 
-        // Model에 데이터를 보관하다.
+        /*
+            HttpServletRequest 를 model 로 사용한다
+            request 가 제공하는 setAttribute()를 사용하면, request 객체 데이터를 보관해서 뷰에 전달할 수 있다.
+            뷰는 request.getAttribute() 를 상요해서 데이터를 꺼내면 된다.
+         */
         request.setAttribute("member", member);
 
         String viewPath = "/WEB-INF/views/save-result.jsp";

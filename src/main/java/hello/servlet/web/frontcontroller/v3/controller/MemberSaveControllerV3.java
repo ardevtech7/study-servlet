@@ -19,6 +19,7 @@ public class MemberSaveControllerV3 implements ControllerV3 {
         memberRepository.save(member);
 
         ModelView mv = new ModelView("save-result");
+        // 모델에 뷰에 필요한 member 객체를 담고 반환한다.
         mv.getModel().put("member", member);
 
         return mv;

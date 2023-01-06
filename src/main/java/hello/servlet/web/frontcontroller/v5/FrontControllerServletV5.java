@@ -57,8 +57,8 @@ public class FrontControllerServletV5 extends HttpServlet {
         // 핸들러를 처리할 수 있는 핸들러 어댑터 목록 조회
         MyHandlerAdapter adapter = getHandlerAdapter(handler);
 
-        // EX) ControllerV3HandlerAdapter.handle() --> controller.process
-        ModelView mv = adapter.handle(request, response, handler);
+        // 어댑터 호출
+        ModelView mv = adapter.handle(request, response, handler); // EX) ControllerV3HandlerAdapter.handle() --> controller.process
 
         String viewName = mv.getViewName();
         MyView view = viewResolver(viewName);
@@ -66,6 +66,7 @@ public class FrontControllerServletV5 extends HttpServlet {
         view.render(mv.getModel(), request, response);
     }
 
+    // 핸들러 매핑 정보인 handlerMappingMap 에서 URL 에 매핑된 핸들러(컨트롤러) 객체를 찾아서 반환한다.
     private Object getHandler(HttpServletRequest request) {
         String requestURI = request.getRequestURI();
         return handlerMappingMap.get(requestURI);

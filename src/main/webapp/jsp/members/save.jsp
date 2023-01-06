@@ -13,7 +13,7 @@
 <%
     // request, response 사용 가능
     MemberRepository memberRepository = MemberRepository.getInstance();
-    System.out.println("MemberSaveServlet.service");
+    System.out.println("sava.jsp");
 
     String username = request.getParameter("username");
     int age = Integer.parseInt(request.getParameter("age"));

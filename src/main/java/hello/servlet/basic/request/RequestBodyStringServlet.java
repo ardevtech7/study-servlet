@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
+/**
+ * HTTP 메서지 바디 데이터를 InputStream 을 사용해서 직접 읽을 수 있다.
+ */
 @WebServlet(name = "requestBodyStringServlet", urlPatterns = "/request-body-string")
 public class RequestBodyStringServlet extends HttpServlet {
     @Override

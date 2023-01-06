@@ -6,7 +6,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Member {
-    private Long id;
+    private Long id; // id 는 Member 를 회원 저장소에 저장하면, 회원 저장소가 할당한다.
     private String username;
     private int age;
 
